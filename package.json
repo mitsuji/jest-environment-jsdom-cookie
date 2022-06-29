@@ -1,0 +1,22 @@
+{
+    "type": "module",
+    "scripts": {
+        "test": "NODE_OPTIONS=--experimental-vm-modules npx jest",
+        "test.watch": "NODE_OPTIONS=--experimental-vm-modules npx jest --watchAll"
+    },
+    "jest": {
+        "testEnvironment": "./jest-environment.js",
+        "testEnvironmentOptions": {
+            "url": "http://localhost:8080",
+            "csrfToken": "XXXXXX",
+            "cookieString": "some_session_shared_key=YYYYYYYY"
+        },
+        "setupFilesAfterEnv": [
+            "./jest-setup.js"
+        ]
+    },
+    "dependencies": {
+        "jest": "^28.1.1",
+        "jest-environment-jsdom": "^28.1.1"
+    }
+}
