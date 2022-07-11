@@ -3,18 +3,26 @@
 testEnvironment for jest that supports testing with CSRF-tokens and cookies.
 
 ## prepare
-Set URL, CSRF-token and cookie in package.json.
 
-You can refer it as global.url or global.csrfToken in your test code.
+### package.json
+Set URL in package.json.
 
-Also the cookieString is sent in the request header.
+You can refer it as global.url in your test code.
 
 ```json
         "testEnvironmentOptions": {
-            "url": "http://localhost:8080",
-            "csrfToken": "XXXXXX",
-            "cookieString": "some_session_shared_key=YYYYYYYY"
+            "url": "http://localhost:8080"
         },
+```
+
+### jest-setup.js
+call setCookie in jest-setup.js.
+
+Cookie is sent in the request header in every request.
+
+```javaScript
+global.setCookie ("rawboat_session_shared_key", "YYYYYYYY");
+global.csrfToken = "XXXXXX";
 ```
 
 ## install
