@@ -7,9 +7,7 @@
     "jest": {
         "testEnvironment": "./jest-environment.js",
         "testEnvironmentOptions": {
-            "url": "http://localhost:8080",
-            "csrfToken": "XXXXXX",
-            "cookieString": "some_session_shared_key=YYYYYYYY"
+            "url": "http://localhost:8080"
         },
         "setupFilesAfterEnv": [
             "./jest-setup.js"
